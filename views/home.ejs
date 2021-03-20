@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+</head>
+<body>
+    <%- include("partials/header.ejs") -%>
+    <h1>Home</h1>
+    <p1><%= starting %></p1>
+    <% posts.forEach(function(i){ %>
+        
+            <h1><%= i.title %> </h1>
+        <p1 class="card-body"><%= i.body.substring(0,100)+"..." %> </p1>
+        <!-- <form action="/post/:id" method="post">
+        <button class="btn btn-primary">See more..</button>
+        </form> -->
+        <a href="/post/<%= i.title %>">See more..</a>
+        
+   <% })  %>
+
+ 
+    <%- include("partials/footer.ejs") -%>
+</body>
+</html>
